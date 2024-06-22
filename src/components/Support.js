@@ -22,7 +22,7 @@ const Wrapper = styled.div`
   justify-content: center;
   align-items: start;
   text-align: start;
-`
+`;
 
 const Icon = styled.div`
   background-color: #ffc107;
@@ -48,13 +48,13 @@ const Link = styled.a`
   color: #8b8b8b;
 `;
 
-const Support = () => (
+const Support = ({ supportContact }) => (
   <Container aria-label="Contact-Information">
     <p>YOUR FEEFO CONTACT SUPPORT</p>
     <Wrapper>
       <Icon aria-label="Icon">S</Icon>
       <Details>
-        <div>Support</div>
+        <div>{supportContact.name}</div>
 
         <div aria-label="Phone-Number">
           {" "}
@@ -62,7 +62,7 @@ const Support = () => (
             <Mail
               style={{ width: "1.25rem", height: "1.25rem", color: "#8b8b8b" }}
             />{" "}
-            support@feefo.com
+            {supportContact.email}
           </Link>{" "}
           020 3362 4208
         </div>

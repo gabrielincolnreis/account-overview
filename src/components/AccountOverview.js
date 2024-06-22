@@ -26,22 +26,18 @@ const Header = styled.h2`
   font-weight: 400;
 `;
 
-const AccountOverview = ({
-  uploads,
-  linesAdded,
-  uploadSuccess,
-  linesSaved,
-}) => (
+
+const AccountOverview = ({ accountOverviewStub }) => (
   <Container>
     <HeaderContainer>
       <Header>Account Overview</Header>
-      <Support />
+      <Support supportContact={accountOverviewStub.supportContact} />
     </HeaderContainer>
     <Sales
-      uploads={uploads}
-      linesAdded={linesAdded}
-      uploadSuccess={uploadSuccess}
-      linesSaved={linesSaved}
+      uploads={accountOverviewStub.salesOverview.uploads}
+      linesAdded={accountOverviewStub.salesOverview.linesAttempted}
+      uploadSuccess={accountOverviewStub.salesOverview.successfulUploads}
+      linesSaved={accountOverviewStub.salesOverview.linesSaved}
     />
   </Container>
 );
