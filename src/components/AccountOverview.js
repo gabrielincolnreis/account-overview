@@ -1,27 +1,47 @@
-import React from 'react';
-import styled from 'styled-components';
-import PropTypes from 'prop-types';
-import Sales from './Sales';
-import Support from './Support';
+import React from "react";
+import styled from "styled-components";
+import PropTypes from "prop-types";
+import Sales from "./Sales";
+import Support from "./Support";
 
 const Container = styled.div`
   padding: 20px;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
+  height: 50%;
+  width: 50%;
+  margin: auto;
+`;
+
+const HeaderContainer = styled.div`
+  height: auto;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+  align-items: center;
 `;
 
 const Header = styled.h2`
   margin: 0 0 20px 0;
+  font-weight: 400;
 `;
 
-const AccountOverview = ({ uploads, linesAdded, uploadSuccess, linesSaved }) => (
+const AccountOverview = ({
+  uploads,
+  linesAdded,
+  uploadSuccess,
+  linesSaved,
+}) => (
   <Container>
-    <Header>Account Overview</Header>
-    <Support />
-    <Sales 
-      uploads={uploads} 
-      linesAdded={linesAdded} 
-      uploadSuccess={uploadSuccess} 
-      linesSaved={linesSaved} 
+    <HeaderContainer>
+      <Header>Account Overview</Header>
+      <Support />
+    </HeaderContainer>
+    <Sales
+      uploads={uploads}
+      linesAdded={linesAdded}
+      uploadSuccess={uploadSuccess}
+      linesSaved={linesSaved}
     />
   </Container>
 );
